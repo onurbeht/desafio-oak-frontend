@@ -29,10 +29,13 @@ const NewProduct = () => {
       },
       body: JSON.stringify(product),
     })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+      .then((res) => res.json())
+      .catch((error) => {
+        console.log(error);
+        return;
+      });
 
-    await navigate("/");
+    navigate("/");
   };
 
   return (
